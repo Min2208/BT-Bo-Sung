@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Liet ke so nguyen to</title>
+</head>
+<body>
+<script>
+    let number = prompt("Enter a number");
+    let result = "";
+    for (let i = 0; i <number; i++) {
+        if (isPrime(i)) {
+            result = result + " " + i ;
+        }
+    }
+
+    function isPrime(value) {
+        if (value < 2) {
+            return false;
+        }
+        if (value == 2) {
+            return true;
+        }
+
+        for (let i = 2; i <=Math.sqrt(value); i++) {
+            if (value % i == 0) {
+                return false;
+            }
+        }
+        return true;
+
+    }
+
+    document.write(result);
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array</title>
+</head>
+<body>
+<script>
+    let arrNumber=[1,3,2,5,2,23,5,12,3,512,3123,412,123,4123,12341,341,34,1,234,123,4,123,41,423,1,2];
+    filterArr(arrNumber);
+    function filterArr(arr) {
+        let evenNumber=[];
+        let oddNumber=[];
+        for (let i=0; i<arr.length;i++){
+            if (arr[i]%2==0){
+                evenNumber.push(arr[i]);
+            }else {
+                oddNumber.push(arr[i]);
+            }
+        }
+        let resultFilter=document.write("Mang chan: "+evenNumber.join(" ")+ "<br>"+"Mang le: " +oddNumber.join(" "));
+        return resultFilter;
+
+    }
+</script>
+</body>
+</html>

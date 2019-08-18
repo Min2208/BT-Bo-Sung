@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>filter array</title>
+</head>
+<body>
+<script>
+    let arrNumber = [3, 315423, 353, 4531, 555, 515, 565, 575, 559,59997753];
+    document.write(filterOddNumber(arrNumber));
+
+    function filterOddNumber(arr) {
+
+        let oddArr = [];
+        for (let i = 0; i < arr.length; i++) {
+            let oddNumber = Math.floor(arr[i]/10);
+            if (arr[i] % 2 !== 0) {
+                if (Math.floor(arr[i] / 10) == 0) {
+                    oddArr.push(arr[i]);
+
+                } else {
+
+                    while (oddNumber >= 0) {
+                        // console.log(arr[i]);
+                        // console.log(oddNumber);
+                        if (oddNumber% 2 !== 0) {
+                            // console.log(arr[i]);
+                            if (Math.floor(oddNumber/10) == 0) {
+                                oddArr.push(arr[i]);
+                                break;
+
+                            }else {
+                                oddNumber=Math.floor(oddNumber/10);
+                                // console.log(oddNumber);
+
+                            }
+                        }else {
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        let max=oddArr[0];
+        for (let i=0;i<oddArr.length;i++){
+            if (oddArr[i]>max){
+                max=oddArr[i];
+            }else {
+                max=max;
+            }
+        }
+        console.log(max);
+        console.log(oddArr);
+        return max;
+    }
+</script>
+</body>
+</html>

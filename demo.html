@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrNumber=[1,2,1,5,5,3,55,1,55,5,3,3,6,5,1,1,1,1];
+    document.write(filterArr(arrNumber));
+    function filterArr(arr) {
+        let count=[];
+        for (let i=0;i<arr.length;i++){
+            count[i]=0;
+            for (let j=0;j<arr.length;j++){
+                if (arr[i]==arr[j]){
+                count[i]++;
+                }
+            }
+        }
+        // console.log(count);
+        let max=count[0];
+        let index=0;
+        for (let i=1;i<count.length;i++){
+            if (count[i]>max){
+                max=count[i];
+                index=i;
+            }
+        }
+        return arr[index];
+    }
+
+</script>
+</body>
+</html>

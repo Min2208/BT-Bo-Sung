@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai tap 2</title>
+</head>
+<body>
+<script>
+    let number1 = prompt("Enter Number 1");
+    let number2 = prompt("Enter Number 2");
+    let resultUsc = uscNumber(number1, number2);
+    let resultLcm = lcmNumber(number1, number2);
+
+    function uscNumber(a, b) {
+        let arrUscNumber = [];
+        if (number1 == number2) {
+            return number1;
+        } else if (number1 < number2) {
+            for (let i = 1; i <= number1; i++) {
+                if (number1 % i == 0 && number2 % i == 0) {
+                    arrUscNumber.push(i);
+                }
+            }
+        } else {
+            for (let i = 1; i <= number2; i++) {
+                if (number1 % i == 0 && number2 % i == 0) {
+                    arrUscNumber.push(i);
+                }
+            }
+        }
+        return arrUscNumber[arrUscNumber.length - 1];
+    }
+
+    function lcmNumber(a, b) {
+        if (number1 == number2) {
+            return number1;
+        }else if (number1>number2){
+            let i=number1;
+            while (i>=number1){
+                if (i%number1==0 && i%number2==0){
+                    return i;
+                }
+                i++;
+            }
+        }else {
+            let i = number2;
+            while (i>=number2){
+                if (i%number1==0 && i%number2==0){
+                    return i;
+                }
+                i++;
+            }
+        }
+    }
+
+    document.write("USC chung lon nhat cua "+number1+" va "+number2+ " la: " +resultUsc+"<br>");
+    document.write("Boi chung nho nhat cua "+number1+" va "+number2+ " la: "+resultLcm);
+</script>
+</body>
+</html>

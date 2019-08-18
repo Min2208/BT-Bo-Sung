@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci</title>
+</head>
+<body>
+<script>
+    let number=prompt("Enter a number");
+    document.write(numberFibonacci(number));
+    function numberFibonacci(value) {
+        let a=1;
+        let b=1;
+        let endNumber= 1;
+        let result=1;
+        while (endNumber<value){
+            result=result+"," + endNumber;
+            endNumber=a+b;
+            a=b;
+            b=endNumber;
+
+        }
+        return result;
+    }
+</script>
+</body>
+</html>
